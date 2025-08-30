@@ -1,0 +1,416 @@
+:root{
+  --bg:#ffffff;
+  --panel:#f6f6f6;
+  --card:rgb(244, 241, 232);
+  --text1:#111111;
+  --text2:#333333;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --accent:#222;         
+  --primary:#0ea5e9;       
+  --success:#16a34a;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior: smooth}
+
+body{
+    margin:0;
+    font-family:"Poppins", system-ui, Arial, sans-serif;
+    color: var(--text1);
+    background: var(--bg);
+}
+
+.nav{
+    position:sticky; top:0; z-index:20;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap :8px;
+    padding:10px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 4px 18px rgba(0,0,0,.25);
+    border-radius: 15px;
+    margin: 30px 50px;
+}
+
+.logo{
+    justify-self: start;
+    font-weight: 900;
+    color: var(--text1);
+    text-decoration: none;
+}
+.center-links{
+    justify-self: center;
+    display: flex;
+    gap: 100px;
+}
+.center-links a{
+    text-decoration: none;
+    color: var(--text1);
+    padding: 6px 30px;
+    font-weight: 600;
+}
+.center-links a:hover{
+    background: #ececec;
+    border-radius: 50px;
+}
+.github{
+    justify-self: end;
+    color: var(--text1);
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.section{
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: grid;
+    gap: 24px;
+}
+
+.home{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: -80px;
+}
+.title{
+    font-size: 4rem;
+    margin: 0 0 6px;
+    line-height: 1.1;
+}
+.title .subtitle{
+    font-size: 2.4rem;
+    color: var(--muted);
+    display: block;
+    margin-top: -4px;
+}
+.desc{
+    color: var(--text2);
+    margin: 0 0 8px;
+}
+.howto{
+    color: var(--muted);
+    margin-top: 50px;
+}
+
+.promo{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 12px;
+    align-content: center;
+}
+.photo-sample{
+    background: var(--bg);
+    border-radius: 18px;
+    height: 260px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo-sample img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.camera-cta{
+    justify-self: center;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255,255,255,.4);
+    color: var(--text1);
+    padding: 10px 14px;
+    cursor: pointer;
+    font-family: poppins, system-ui, Arial, sans-serif;
+    font-weight: 600;
+}
+.camera-cta:hover{
+    background: #ececec;
+}
+
+.capture{
+    margin-top: 80px;
+    gap: 18px;
+    
+}
+.cam-area{
+    justify-content: start;   
+    align-items: center;
+    display:grid; 
+    grid-template-columns:1.2fr .8fr; 
+    gap:16px;
+    box-shadow: var(--shadow);
+    background:var(--card); 
+}
+.frame {
+    max-width: 90%;  
+    max-height: 90%;        
+    object-fit: cover;
+    position:relative; 
+    aspect-ratio: 4/3;
+    background:var(--card); 
+    border:1px solid var(--line); 
+    border-radius:12px; 
+    box-shadow:var(--shadow);
+    overflow: hidden;
+    margin-left: 30px;
+}
+video, canvas {
+    width:100%; 
+    height:100%;
+    aspect-ratio:4/3; 
+    display:block; 
+    background: var(--card);
+    border-radius:12px;
+    object-fit: cover;
+    padding-left: 10px;
+}
+.hidden{
+    display: none !important; 
+}
+.timer{
+  position:absolute; 
+  inset:0; display:grid; 
+  place-items:center;
+  font-size:4rem; 
+  font-weight:700; 
+  color:#000; 
+  background:rgba(255,255,255,.6); 
+  border-radius:12px;
+}
+
+.cam-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;    
+}
+
+.side-btn {
+  background: radial-gradient(circle at 30% 30%, #e6e6e6, #b3b3b3);
+  font-family: Poppins, system-ui, Arial, sans-serif;
+  color: var(--text1);
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  padding: 8px 16px;
+  min-width: 110px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2),
+              -2px -2px 5px rgba(255,255,255,0.8);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+.side-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.25),
+              -2px -2px 6px rgba(255,255,255,0.9);
+}
+.capture-btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e6e6e6, #b3b3b3);
+  border: 2px solid #888;
+  font-size: 1rem;
+  font-family: Poppins, system-ui, Arial, sans-serif;
+  color: var(--text1);
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: inset 2px 2px 6px rgba(255,255,255,0.8),
+    inset -2px -2px 6px rgba(0,0,0,0.2),
+    3px 3px 8px rgba(0,0,0,0.3);
+  transition: transform 0.1s ease;
+}
+.capture-btn:active {
+  transform: scale(0.95);
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.3),
+    inset -2px -2px 6px rgba(255,255,255,0.7);
+}
+
+#switchCamBtn{
+    display:none;
+}
+
+.meta {
+  display:grid; 
+  grid-template-columns:1.5fr .5fr auto; 
+  gap:16px; 
+  align-items:start;
+}
+.song {
+    display:flex; 
+    grid-template-columns:auto 1fr; 
+    gap:10px; 
+    align-items:center
+}
+.vinyl {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url('vinly.png'); 
+    background-size: cover;     
+    background-position: center;   
+    background-repeat: no-repeat; 
+    display: block;                
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.6),
+                2px 2px 6px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+    cursor: pointer;
+    z-index: 2;
+    margin-right: -20px;
+    flex-shrink: 0;
+}
+#songLink {
+    padding:15px 20px; 
+    border:1px solid var(--line); border-radius:10px; 
+    width:100%;
+    min-width: 200px;
+    flex: 1;
+}
+.song-preview {
+    background:var(--card); 
+    border:1px solid var(--line); border-radius:12px; 
+    padding:8px;
+}
+.note label {
+    font-weight:600
+}
+.note textarea {
+    width:100%; 
+    border:1px solid var(--line); border-radius:10px; 
+    padding:10px; 
+    background:#fff
+}
+.finalize .success {
+    background:var(--success); 
+    color:#fff; 
+    border-color:transparent;
+    padding:10px; 
+    border-radius:10px;
+}
+
+.gallery{
+    align-content: start;
+    margin-top: 80px;
+}
+.gallery h2{
+    margin: 0;
+}
+.muted{
+    color: var(--muted);
+    margin: 0 0 6px;
+}
+.grid2x2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
+    gap: 16px;
+}
+.card{
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: var(--shadow);
+}
+.card .left{
+    background: var(--bg);
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+.card .left img {
+    width: 100%;
+     height: 100%;
+     object-fit: cover;
+    border-radius: 0;
+}
+.card .right{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+.song-slot iframe, .song-slot audio{
+    width: 100%;
+    height: 80px;
+    border: none;
+}
+.note-slot {
+    display: -webkit-box;      
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: .95rem;
+    color: var(--text2);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px;
+    line-height: 1.4em;    
+    max-height: 4.2em;         
+}
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: #ff4d4d;
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #e60000;
+}   
+@media(max-width: 900px){
+    .home{
+        grid-template-columns: 1fr;
+    }
+    .cam-area{
+        grid-template-columns: 1fr;
+    }
+    .meta{
+        grid-template-columns: 1fr;
+    }
+    .grid2x2{
+        grid-template-columns: 1fr;
+    }
+    #switchCamBtn{
+        display:block;
+    }
+}
+@media(max-width: 600px){
+    .grid2x2{
+        grid-template-columns: 1fr;
+    }
+}
+ 

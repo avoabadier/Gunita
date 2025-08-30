@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gunita</title>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<!--nav-->
+    <header class="nav">
+
+        <a class="logo" href="#" title="Reaload" onclick="location.reload()">Gunita</a>
+
+        <nav class="center-links">
+            <a href="#home">Home</a>
+            <a href="#capture">Capture</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+
+        <a class="github" href="https://github.com/avoabadier" target="_blank" rel="noopener" title="gitprofile">
+        <img src="github-mark.png" alt="github logo" width="32" height="32">
+        </a>
+    </header>
+
+    <!--homepage-->
+    <section id="home" class="section home">
+        <div class="home-left">
+            <h1 class="title">GUNITA <br/><span class="subtitle">ᜄᜓᜈᜒᜆ</span></h1>
+            <P class="desc">
+                The moments we created, do they still feel the same? <br/>
+                Capture the Moment, Save the Vibe, Relive the <Menu:context></Menu:context>Memory.
+            </P>
+            <p class="howto">
+                How-To: Use your camera or import a photo → add a fitting song → describe the moment → finalize → view in gallery.
+            </p>
+        </div>
+
+        <div class="home-right">
+            <div class="promo">
+                <div class="photo-sample">
+                    <img src="promo.jpg" alt="sample photo">
+                </div>
+                <button class="camera-cta" onclick="document.querySelector('#capture').scrollIntoView({behavior:'smooth'})">📷 Capture</button>
+            </div>
+        </div>
+    </section>
+
+    <!--capture-->
+    <section id="capture" class="section capture">
+        <div class="cam-area">
+            <div class="frame">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" class="hidden"></canvas>
+                <div id="timer" class="timer hidden">3</div>
+            </div>
+
+            <div class="cam-buttons">
+                <input type="file" id="file" accept="image/*" class="hidden"/>
+                <button class="side-btn" id="importBtn">Import Photo</button>
+                <button class="side-btn" id="timerBtn">Timer</button>
+                <button class="capture-btn" id="captureBtn">Capture</button>
+                <button class="side-btn" id="galleryBtn" onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})">View Gallery</button>
+
+                <button class="side-btn outline mobile-only" id="switchCamBtn">Switch Camera</button>
+                <p id="status" class="status"></p>
+            </div>
+        </div>
+
+        <div class="meta">
+            <div class="song">
+                <button class="vinyl" id="songBtn"></button>
+                <input type="url" id="songLink" placeholder="Paste Spotify track link or direct audio URL" />
+            <div id="songPreview" class="song-preview hidden"></div>
+            </div>
+
+            <div class="note">
+                <label for="noteText">Add a note.</label>
+                <textarea id="noteText" rows="5" placeholder="Describe the moment…"></textarea>
+            </div>
+
+            <div class="finalize">
+                <button class="btn success" id="finalizeBtn">Finalize & Save</button>
+            </div>
+        </div>
+    </section>
+
+    <!--gallery-->
+    <section id="gallery" class="section gallery">
+        <h2>Gallery</h2>
+        <p class="muted">Revisit your Memories!</p>
+
+        <div id="grid" class="grid2x2"></div>
+        <p id="emptyMsg" class="muted">You have yet to capture your moments...</p>
+    </section>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
