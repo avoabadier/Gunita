@@ -14,11 +14,11 @@ We wanted to create a way for people to preserve memories not just with photos, 
 
 Gunita allows users to:
 
-    Save a song or audio track with a personal note.
+Save a song or audio track with a personal note.
 
-    Create a digital “memory card” that holds both text and music.
+Create a digital “memory card” that holds both text and music.
 
-    Revisit and relive those moments anytime.
+Revisit and relive those moments anytime.
 
 
 🛠 How we built it
@@ -71,30 +71,6 @@ Add user authentication so people can log in and save their personal memory card
 Store memories in a database instead of just static pages.
 
 Share memories with friends via links or social media.
-
-
-
-🖥 Built with
-
-HTML
-
-CSS
-
-JavaScript
-
-Git + GitHub
-
-
-🎥 Demo
-
-[YouTube/Facebook/TikTok demo link here]
-
-
-
-📂 Repository
-
-This is the official repo for Gunita.
-
 
 
 ✨ Made for CodeSprout Hackathon
