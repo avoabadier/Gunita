@@ -264,7 +264,7 @@ video, canvas {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-image: url('vinly.png'); 
+    background-image: url('./vinly.png'); 
     background-size: cover;     
     background-position: center;   
     background-repeat: no-repeat; 
